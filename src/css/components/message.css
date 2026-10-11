@@ -1,0 +1,5 @@
+/* ===== ごあいさつ ===== */
+.message p { font-size: 1.02rem; line-height: 2.1; }
+.message .catch { margin: 2.5rem 0; text-align: center; }
+.divider { border: 0; width: 3rem; height: 2px; background: var(--cream-dark); margin: 2.5rem auto; }
+.signature { text-align: right; font-family: var(--serif); margin-top: 3rem; }

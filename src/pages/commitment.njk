@@ -1,0 +1,56 @@
+---
+title: 当牧場のこだわり
+description: 高橋牧場株式会社の仔牛の育て方へのこだわりをご紹介します。
+label: Commitment
+heading: ～当牧場のこだわり～
+
+# こだわりの項目（写真と文章が左右交互に並ぶ）
+points:
+  - title: 牛舎の消毒
+    photo: /images/commitment-1.jpg
+    label: 牛舎の消毒の写真
+    text:
+      - 牛たちや牛舎を清潔に保つことは、健康な牛を育てるために非常に重要なことで、欠かすことのできない作業です。
+  - title: 哺育舎の石灰塗布
+    photo: /images/commitment-2.jpg
+    label: 石灰塗布の写真
+    text:
+      - 新しい仔牛たちが入って来るたびに牛舎を一から綺麗にして、石灰をまきます。
+      - 仔牛たちには必ず清潔な状態の牛舎に入ってもらいます。
+  - title: 水槽掃除
+    photo: /images/commitment-3.jpg
+    label: 水槽掃除の写真
+    text:
+      - 牛たちが毎日口をつけるところ、汚い水は牛の健康に良くありません。
+      - 仔牛たちの水槽は毎日掃除をして清潔に保ちます。
+---
+{% import "components/ui.njk" as ui %}
+    <!-- 導入 -->
+    <section class="section intro-section">
+      <div class="container">
+        <h2 class="section-title center"><span class="nw">すべては</span><span class="nw">牛たちのために。。。</span></h2>
+      </div>
+    </section>
+
+    {%- for point in points %}
+
+    <!-- {{ loop.index }}. {{ point.title }} -->
+    <section class="section{% if loop.index is odd %} section-alt{% endif %}">
+      <div class="container">
+        {% call ui.feature(point.photo, point.label, reverse=(loop.index is even)) %}
+            <p class="point-num">{{ loop.index | pad2 }}</p>
+            <h2 class="section-title">{{ point.title }}</h2>
+            {%- for line in point.text %}
+            <p>{{ line }}</p>
+            {%- endfor %}
+        {% endcall %}
+      </div>
+    </section>
+    {%- endfor %}
+
+    <!-- 締め -->
+    <section class="section">
+      <div class="container">
+        <p class="catch center">これはほんの一例です。。。</p>
+      </div>
+    </section>

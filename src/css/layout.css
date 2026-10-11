@@ -1,0 +1,94 @@
+/* ===== ヘッダー・ヒーロー・セクション・フッターなど、ページの骨組み ===== */
+
+/* ===== ヘッダー ===== */
+/* sticky なので、ヘッダーの高さが変わっても下の内容が自動でずれる */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(247, 242, 232, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: var(--header-h);
+}
+.logo { font-family: var(--serif); font-weight: 700; font-size: 1.3rem; color: var(--green); white-space: nowrap; }
+.site-nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.site-nav a { font-size: 0.92rem; white-space: nowrap; transition: color 0.2s; }
+.site-nav a:hover { color: var(--brown); }
+.site-nav a[aria-current="page"] { color: var(--brown); font-weight: 700; }
+
+/* ===== ヒーロー（ホーム） ===== */
+.hero {
+  position: relative; height: calc(100vh - var(--header-h)); min-height: 480px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: var(--white); overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  /* images/hero.jpg を置くと写真が表示され、無ければ緑のグラデーションになる */
+  background: url("../images/hero.jpg") center / cover no-repeat, var(--forest);
+}
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3); }
+.hero-content { position: relative; padding: 0 1rem; }
+.hero-sub { font-size: 0.95rem; letter-spacing: 0.3em; margin-bottom: 1.2em; }
+.hero-title { font-size: clamp(2rem, 6vw, 3.6rem); letter-spacing: 0.12em; }
+.hero-lead { font-size: 1.05rem; }
+
+/* ===== 下層ページの見出し ===== */
+.page-header {
+  padding: 72px 5% 64px;
+  text-align: center; color: var(--white);
+  background: var(--forest);
+}
+.page-header .section-label { color: var(--cream-dark); }
+.page-header h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); letter-spacing: 0.1em; margin: 0; }
+
+/* ===== セクション共通 ===== */
+.section { padding: 110px 0; }
+.section-alt { background: var(--cream); }
+.section-label {
+  font-family: var(--serif); color: var(--brown);
+  font-size: 0.85rem; letter-spacing: 0.25em; margin-bottom: 0.3em;
+}
+.section-title { font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--green); margin-bottom: 1.4em; }
+
+/* ===== フッター ===== */
+.site-footer { background: var(--green); color: var(--cream); text-align: center; padding: 3rem 0 2rem; font-size: 0.85rem; }
+.footer-logo { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.6em; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.6rem; margin-bottom: 1.5rem; }
+.footer-nav a:hover { text-decoration: underline; }
+.footer-sns { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 1.5rem; }
+.footer-sns a {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1.1rem; border: 1px solid rgba(247, 242, 232, 0.4); border-radius: 999px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.footer-sns a:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--cream); }
+.icon-youtube { width: 28px; height: 20px; }
+.icon-play { fill: var(--green); }
+/* カーソルを合わせるとYouTubeの赤に */
+.footer-sns a:hover .icon-youtube { color: #ff0033; }
+.footer-sns a:hover .icon-play { fill: var(--white); }
+
+/* ===== スクロール時のフェードイン ===== */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.8s, transform 0.8s; }
+.fade-in.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== スマホ・タブレット ===== */
+/* ヘッダー：メニューが横に入りきらない幅では、ロゴの下にメニューを並べて折り返す */
+@media (max-width: 1180px) {
+  :root { --header-h: 96px; }
+  .header-inner { flex-direction: column; justify-content: center; padding: 0.6rem 0; gap: 0.3rem; }
+  .logo { font-size: 1.15rem; }
+  .site-nav ul { flex-wrap: wrap; justify-content: center; gap: 0.2rem 1.2rem; }
+  .site-nav a { font-size: 0.82rem; display: block; padding: 0.15rem 0; }
+  .site-nav a[aria-current="page"] { border-bottom: 2px solid var(--brown); }
+}
+
+@media (max-width: 960px) {
+  .section { padding: 72px 0; }
+}

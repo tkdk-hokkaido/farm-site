@@ -1,0 +1,9 @@
+[
+  { "label": "ホーム", "url": "/index.html" },
+  { "label": "高橋牧場について", "url": "/about.html" },
+  { "label": "当牧場のこだわり", "url": "/commitment.html" },
+  { "label": "牧場の一日", "url": "/daily.html" },
+  { "label": "牧場風景写真館", "url": "/gallery.html" },
+  { "label": "ブログ", "url": "/blog.html", "section": "/blog/" },
+  { "label": "お問い合わせ・採用情報", "url": "/contact.html" }
+]

@@ -1,0 +1,15 @@
+{#- ヘッダー：メニュー項目は _data/nav.json で管理 -#}
+{#- ホームの URL は "/" になるので、メニューの "/index.html" と比べられるようにそろえる -#}
+{%- set here = "/index.html" if page.url == "/" else page.url -%}
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/index.html" class="logo">{{ site.name }}</a>
+      <nav class="site-nav">
+        <ul>
+          {%- for item in nav %}
+          <li><a href="{{ item.url }}"{% if here == item.url or (item.section and here.startsWith(item.section)) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>

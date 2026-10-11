@@ -1,0 +1,27 @@
+/* ===== カード ===== */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.card {
+  background: var(--white); padding: 2.4rem 2rem; border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(60, 40, 20, 0.06);
+}
+.card-num { font-family: var(--serif); font-size: 2.2rem; color: var(--green-light); line-height: 1; margin-bottom: 0.6em; }
+.card h3 { font-size: 1.3rem; color: var(--green); }
+.card p { color: var(--text-sub); font-size: 0.95rem; margin: 0; }
+/* 枚数が3の倍数でなくても、最後の行を中央にそろえる */
+.cards-center { display: flex; flex-wrap: wrap; justify-content: center; }
+.cards-center > .card { flex: 0 1 calc((100% - 4rem) / 3); }
+.link-card { display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+.link-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(60, 40, 20, 0.12); }
+.link-card .more { margin-top: auto; padding-top: 1.2rem; color: var(--brown); font-size: 0.9rem; }
+
+.btn {
+  display: inline-block; margin-top: 1.5rem; padding: 0.9rem 2.4rem;
+  background: var(--green); color: var(--white); border-radius: 999px;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--green-light); }
+
+@media (max-width: 960px) {
+  .cards { grid-template-columns: 1fr; gap: 2rem; }
+  .cards-center > .card { flex-basis: 100%; }
+}

@@ -1,0 +1,109 @@
+---
+title: お問い合わせ・採用情報
+description: 高橋牧場株式会社へのお問い合わせ、スタッフ募集のご案内です。
+label: Contact & Recruit
+heading: お問い合わせ・<br class="sp-only">採用情報
+
+# 採用：募集を再開するときは true にする
+recruiting: false
+---
+{#- 電話番号・メール・住所・フォームのキーは _data/site.json で管理 -#}
+    <!-- お問い合わせ -->
+    <section class="section">
+      <div class="container narrow">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">お問い合わせ</h2>
+        <p>牧場に関するご質問や取材のご依頼などは、下記のフォーム、またはお電話・メールにてお気軽にご連絡ください。</p>
+        <div class="contact-boxes">
+          <div class="contact-box">
+            <p class="contact-label">お電話</p>
+            <p class="contact-value"><a href="tel:{{ site.tel }}">{{ site.tel }}</a></p>
+            <p class="note">受付時間 {{ site.telHours }}</p>
+          </div>
+          <div class="contact-box">
+            <p class="contact-label">メール</p>
+            <p class="contact-value"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            <p class="note">数日以内にご返信いたします</p>
+          </div>
+        </div>
+        <p class="note">※ 防疫のため、牛舎への立ち入り・見学はご遠慮いただいております。</p>
+
+        <!-- お問い合わせフォーム（送信は Web3Forms を利用。手順は README.md） -->
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+          <input type="hidden" name="from_name" value="高橋牧場ホームページ">
+          <!-- スパム対策（人には見えない欄。入力があれば送信されない） -->
+          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+
+          <h3 class="form-title">お問い合わせフォーム</h3>
+          <p class="note"><span class="required">必須</span> の項目は必ずご入力ください。</p>
+
+          <div class="form-row">
+            <label for="f-name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="f-address">ご住所</label>
+            <input type="text" id="f-address" name="address" autocomplete="street-address">
+          </div>
+          <div class="form-row">
+            <label for="f-email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-row">
+            <label for="f-phone">電話番号</label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-row">
+            <label for="f-subject">件名 <span class="required">必須</span></label>
+            <input type="text" id="f-subject" name="subject" required>
+          </div>
+          <div class="form-row">
+            <label for="f-message">メッセージ <span class="required">必須</span></label>
+            <textarea id="f-message" name="message" rows="7" required></textarea>
+          </div>
+
+          <p class="note">ご入力いただいた個人情報は、お問い合わせへの回答のみに使用いたします。</p>
+          <p class="center"><button type="submit" class="btn">送信する</button></p>
+          <p class="form-result" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 採用情報（front matter の recruiting で切り替え） -->
+    <section class="section section-alt">
+      <div class="container narrow">
+        <p class="section-label">Recruit</p>
+        <h2 class="section-title">採用情報</h2>
+        {%- if recruiting %}
+        <p>{{ site.name }}では、一緒に牛を育ててくれる仲間を募集しています。経験は問いません。動物が好きな方、体を動かすことが好きな方を歓迎します。</p>
+        <dl class="info">
+          <dt>職種</dt><dd>【例：牧場スタッフ（飼養管理・牛舎清掃など）】</dd>
+          <dt>雇用形態</dt><dd>【例：正社員／パート】</dd>
+          <dt>勤務地</dt><dd>{{ site.address }}</dd>
+          <dt>勤務時間</dt><dd>【例：5:00〜17:00のうち実働8時間（休憩あり）】</dd>
+          <dt>休日</dt><dd>【例：月6日 シフト制】</dd>
+          <dt>給与</dt><dd>【例：月給〇〇万円〜】</dd>
+          <dt>待遇</dt><dd>【例：社会保険完備、交通費支給、住宅相談可】</dd>
+          <dt>応募方法</dt><dd>お電話またはメールにてご連絡ください。</dd>
+        </dl>
+        {%- else %}
+        <div class="notice">
+          <p>現在募集は行っておりません。</p>
+        </div>
+        {%- endif %}
+      </div>
+    </section>
+
+    <!-- アクセス -->
+    <section class="section">
+      <div class="container narrow">
+        <p class="section-label">Access</p>
+        <h2 class="section-title">アクセス</h2>
+        <p>〒{{ site.postalCode }} {{ site.address }}</p>
+        <div class="map-placeholder">
+          <!-- Googleマップの「共有 → 地図を埋め込む」で取得した iframe をここに貼り付け -->
+          <p>地図（Googleマップ埋め込み）</p>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,22 @@
+{
+  "themes": [
+    {
+      "id": "camera",
+      "label": "カメラ目線",
+      "cover": "/images/gallery/camera.jpg",
+      "photos": []
+    },
+    {
+      "id": "scenery",
+      "label": "牧場内の風景",
+      "cover": "/images/gallery/scenery.jpg",
+      "photos": []
+    },
+    {
+      "id": "work",
+      "label": "作業の一コマ",
+      "cover": "/images/gallery/work.jpg",
+      "photos": []
+    }
+  ]
+}

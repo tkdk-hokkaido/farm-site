@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+---
+{#- ブログ記事のレイアウト（src/blog/*.md で使用） -#}
+    <article class="section post">
+      <div class="container narrow">
+        <header class="post-header">
+          <time datetime="{{ page.date | isoDate }}">{{ page.date | dotDate }}</time>
+          <span class="tag">{{ tag }}</span>
+          <h1>{{ title }}</h1>
+        </header>
+
+{{ content | safe }}
+
+        <p class="back"><a href="/blog.html">← ブログ一覧へ戻る</a></p>
+      </div>
+    </article>

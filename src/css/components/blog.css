@@ -1,0 +1,17 @@
+/* ===== ブログ ===== */
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li { border-bottom: 1px solid var(--cream-dark); }
+.post-list a { display: block; padding: 1.8rem 0; transition: opacity 0.2s; }
+.post-list a:hover { opacity: 0.7; }
+.post-list h2 { font-size: 1.3rem; color: var(--green); margin: 0.4em 0; }
+.post-list p { margin: 0; color: var(--text-sub); font-size: 0.95rem; }
+time { font-size: 0.85rem; color: var(--text-sub); margin-right: 0.8em; }
+.tag {
+  display: inline-block; font-size: 0.75rem; padding: 0.1em 0.8em;
+  border: 1px solid var(--brown); color: var(--brown); border-radius: 999px;
+}
+.post { padding-top: 72px; }
+.post-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--cream-dark); }
+.post-header h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--green); margin: 0.5em 0 0; }
+.post .back { margin-top: 3rem; }
+.post .back a { color: var(--brown); }

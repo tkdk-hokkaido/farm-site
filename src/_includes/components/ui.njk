@@ -1,0 +1,32 @@
+{#-
+  ページの中で繰り返し使う部品。各ページの先頭で次のように読み込んで使う。
+    {% import "components/ui.njk" as ui %}
+-#}
+
+{#-
+  写真枠：src の画像があれば表示し、無ければ label を書いた仮の枠を表示する
+    {{ ui.photo("/images/school.jpg", "牛たちの写真") }}
+-#}
+{% macro photo(src, label, class="") -%}
+<div class="photo{% if class %} {{ class }}{% endif %}" style="background-image: url('{{ src }}');" data-label="{{ label }}"></div>
+{%- endmacro %}
+
+{#-
+  写真と文章の2列：文章は call ～ endcall の中に書く。reverse=true で PC 表示の左右が入れ替わる
+    {% call ui.feature("/images/x.jpg", "写真の説明") %}
+      <h2>見出し</h2><p>本文</p>
+    {% endcall %}
+-#}
+{% macro feature(src, label, reverse=false) -%}
+<div class="two-col{% if reverse %} reverse{% endif %}">
+          <div>
+{{ caller() }}
+          </div>
+          {{ photo(src, label) }}
+        </div>
+{%- endmacro %}
+
+{#- 「準備中」の表示 -#}
+{% macro emptyState(message="写真は現在準備中です。") -%}
+<div class="empty-state"><p>{{ message }}<br>もうしばらくお待ちください。</p></div>
+{%- endmacro %}

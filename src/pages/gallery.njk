@@ -1,0 +1,42 @@
+---
+title: 牧場風景写真館
+description: 高橋牧場株式会社の牛たちや、四季折々の牧場の風景写真です。
+label: Gallery
+heading: 牧場風景写真館
+---
+{#- テーマと写真は _data/gallery.json で管理 -#}
+{% import "components/ui.njk" as ui %}
+    <section class="section">
+      <div class="container">
+        <p class="lead center"><span class="nw">北海道、十勝における</span><span class="nw">四季折々の牧場風景や作業風景を</span><span class="nw">お楽しみ頂ければ嬉しいです。</span></p>
+
+        <!-- テーマ選択 -->
+        <div class="themes">
+          {%- for theme in gallery.themes %}
+          <button type="button" class="theme photo" data-theme="{{ theme.id }}" style="background-image: url('{{ theme.cover }}');" data-label="{{ theme.label }}">
+            <span class="theme-label">{{ theme.label }}</span>
+          </button>
+          {%- endfor %}
+        </div>
+
+        {%- for theme in gallery.themes %}
+
+        <!-- {{ theme.label }} -->
+        <div class="theme-panel" id="{{ theme.id }}" hidden>
+          <h2 class="section-title center">{{ theme.label }}</h2>
+          {%- if theme.photos.length %}
+          <div class="gallery">
+            {%- for p in theme.photos %}
+            <figure>
+              <img src="{{ p.src }}" alt="{{ p.caption }}" loading="lazy">
+              <figcaption>{{ p.caption }}</figcaption>
+            </figure>
+            {%- endfor %}
+          </div>
+          {%- else %}
+          {{ ui.emptyState() }}
+          {%- endif %}
+        </div>
+        {%- endfor %}
+      </div>
+    </section>

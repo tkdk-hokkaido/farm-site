@@ -1,0 +1,16 @@
+/*
+  スタイルの入口。各ページはこのファイルだけを読み込む。
+  順番に意味があるので（後のものが優先）、並び替えるときは注意。
+*/
+@import url("base.css");        /* 色・文字・共通の小物 */
+@import url("layout.css");      /* ヘッダー・ヒーロー・セクション・フッター */
+
+@import url("components/card.css");        /* カード・ボタン */
+@import url("components/photo.css");       /* 写真枠・写真と文章の2列 */
+@import url("components/barns.css");       /* ホーム：哺育舎→離乳舎→育成舎 */
+@import url("components/message.css");     /* 高橋牧場について：ごあいさつ */
+@import url("components/commitment.css");  /* 当牧場のこだわり */
+@import url("components/info.css");        /* 牧場概要などの表 */
+@import url("components/gallery.css");     /* 写真館 */
+@import url("components/blog.css");        /* ブログ */
+@import url("components/contact.css");     /* お問い合わせ・採用・地図 */

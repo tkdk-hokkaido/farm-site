@@ -1,0 +1,21 @@
+{#- フッター：メニューは _data/nav.json、YouTube の URL は _data/site.json で管理 -#}
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-logo">{{ site.name }}</p>
+      <nav class="footer-nav">
+        {%- for item in nav %}
+        <a href="{{ item.url }}">{{ item.label }}</a>
+        {%- endfor %}
+      </nav>
+      <div class="footer-sns">
+        <a href="{{ site.youtube }}" target="_blank" rel="noopener" aria-label="高橋牧場のYouTubeチャンネル（新しいタブで開きます）">
+          <svg class="icon-youtube" viewBox="0 0 28 20" aria-hidden="true">
+            <rect width="28" height="20" rx="5" fill="currentColor"/>
+            <path d="M11.2 5.6v8.8l7.4-4.4z" class="icon-play"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+      </div>
+      <p>&copy; <span class="year-now"></span> {{ site.name }}</p>
+    </div>
+  </footer>

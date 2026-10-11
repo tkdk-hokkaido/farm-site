@@ -1,0 +1,26 @@
+/* ===== 写真枠（写真が無いときはラベルを表示） ===== */
+.photo {
+  aspect-ratio: 4 / 3; border-radius: 6px;
+  background-color: var(--cream-dark);
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-sub); font-size: 0.85rem;
+}
+.photo::before { content: attr(data-label); }
+.photo.has-photo::before { content: none; }
+
+/* ===== 写真と文章の2列 ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+/* PCでは写真を左に（スマホでは文章→写真の順のまま） */
+.two-col.reverse > :first-child { order: 2; }
+.photo-wide { aspect-ratio: 16 / 7; }
+.catch {
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 700;
+  color: var(--brown); line-height: 1.7; margin-bottom: 1.4em;
+}
+
+@media (max-width: 960px) {
+  .two-col { grid-template-columns: 1fr; gap: 2rem; }
+  .two-col.reverse > :first-child { order: 0; }
+  .photo-wide { aspect-ratio: 4 / 3; }
+}

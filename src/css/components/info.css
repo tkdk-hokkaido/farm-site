@@ -1,0 +1,9 @@
+/* ===== 概要テーブル ===== */
+.info { display: grid; grid-template-columns: 7em 1fr; margin: 0 0 1.5rem; }
+.info dt, .info dd { padding: 0.8rem 0; border-bottom: 1px solid var(--cream-dark); margin: 0; }
+.info dt { color: var(--brown); font-weight: 500; }
+
+@media (max-width: 960px) {
+  .info { grid-template-columns: 1fr; }
+  .info dt { border-bottom: 0; padding-bottom: 0; }
+}

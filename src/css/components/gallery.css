@@ -1,0 +1,50 @@
+/* ===== 写真館 ===== */
+.themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
+.theme {
+  position: relative; overflow: hidden; padding: 0; border: 0; cursor: pointer;
+  font: inherit; color: var(--white);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.theme:hover, .theme:focus-visible { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(60, 40, 20, 0.2); }
+.theme::before { color: var(--text-sub); }
+.theme:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
+/* カーソルを合わせると暗い膜とテーマ名が浮き上がる */
+.theme-label {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(30, 45, 30, 0.55);
+  font-family: var(--serif); font-size: 1.4rem; font-weight: 700; letter-spacing: 0.15em;
+  opacity: 0; transition: opacity 0.35s;
+}
+.theme-label::after {
+  content: ""; position: absolute; left: 50%; top: calc(50% + 1.4rem);
+  width: 2.5rem; height: 2px; background: var(--white);
+  transform: translateX(-50%) scaleX(0); transition: transform 0.35s 0.1s;
+}
+.theme:hover .theme-label, .theme:focus-visible .theme-label, .theme[aria-pressed="true"] .theme-label { opacity: 1; }
+.theme:hover .theme-label::after, .theme[aria-pressed="true"] .theme-label::after { transform: translateX(-50%) scaleX(1); }
+/* 選択中のテーマは枠で示す */
+.theme[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--brown); }
+/* タッチ操作の端末（ホバーできない）では常にテーマ名を表示 */
+@media (hover: none) {
+  .theme-label { opacity: 1; background: rgba(30, 45, 30, 0.45); }
+}
+.theme-panel { scroll-margin-top: calc(var(--header-h) + 24px); }
+.theme-panel .section-title { margin-bottom: 1.2em; }
+
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+.gallery figcaption { font-size: 0.85rem; color: var(--text-sub); margin-top: 0.4rem; }
+.empty-state {
+  padding: 4rem 1rem; text-align: center; color: var(--text-sub);
+  background: var(--cream); border-radius: 6px;
+}
+.empty-state p { margin: 0; }
+
+@media (max-width: 960px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .themes { gap: 0.8rem; }
+  .theme-label { font-size: 1rem; letter-spacing: 0.05em; }
+  .theme-label::after { top: calc(50% + 1rem); }
+}

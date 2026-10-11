@@ -1,0 +1,23 @@
+---
+title: ブログ
+description: 高橋牧場株式会社の日々の出来事を綴るブログです。
+label: Blog
+heading: ブログ
+---
+{#- 記事は src/blog/ に Markdown で追加すると、ここに新しい順で自動表示される -#}
+    <section class="section">
+      <div class="container narrow">
+        <ul class="post-list">
+          {%- for post in collections.posts %}
+          <li>
+            <a href="{{ post.url }}">
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | dotDate }}</time>
+              <span class="tag">{{ post.data.tag }}</span>
+              <h2>{{ post.data.title }}</h2>
+              <p>{{ post.data.excerpt }}</p>
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </section>

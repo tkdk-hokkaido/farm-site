@@ -1,0 +1,107 @@
+---
+# ホーム（title を書かないと「高橋牧場株式会社 | 仔牛を育てる牧場」になる）
+
+# 哺育舎 → 離乳舎 → 育成舎
+barns:
+  - name: 哺育舎
+    photo: /images/hoikusha.jpg
+    text: 生まれて間もない仔牛たちが入る牛舎が哺育舎。ここでいっぱいミルクを飲んで大きくなります！
+  - name: 離乳舎
+    photo: /images/rinyusha.jpg
+    text: ミルクを飲んで大きくなった仔牛たちが次に行く場所は離乳舎。ここでは餌をいっぱい食べて大きくなります！
+  - name: 育成舎
+    photo: /images/ikuseisha.jpg
+    text: 餌をいっぱい食べて大きくなった牛たちが次に行く場所は育成舎。ここではもっと餌を食べてもっと大きくなります！
+
+# 「牧場をもっと知る」のカード
+links:
+  - title: 高橋牧場について
+    url: /about.html
+    text: 牧場の成り立ちや想い、牧場概要をご紹介します。
+  - title: 当牧場のこだわり
+    url: /commitment.html
+    text: 牛舎の消毒や水槽掃除など、すべては牛たちのための取り組みをご紹介します。
+  - title: 牧場の一日
+    url: /daily.html
+    text: 仔牛の哺乳・餌やりから牛舎の掃除まで、牧場の一日をご紹介します。
+  - title: 牧場風景写真館
+    url: /gallery.html
+    text: 牛たちの表情や、四季折々の牧場の風景をお届けします。
+  - title: ブログ
+    url: /blog.html
+    text: 仔牛の誕生や日々の出来事など、牧場の「今」を綴ります。
+---
+{% import "components/ui.njk" as ui %}
+    <!-- ヒーロー（写真は images/hero.jpg） -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">高橋牧場へ<br class="sp-only">ようこそ！</h1>
+      </div>
+    </section>
+
+    <!-- 牧場の紹介 -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label center">About</p>
+        <h2 class="section-title center">高橋牧場は仔牛を育てる牧場です</h2>
+        <p class="lead center">生まれて間もない仔牛から育てて、<br class="sp-only">約9ヵ月間を高橋牧場で過ごします。</p>
+
+        <ol class="barns">
+          {%- for barn in barns %}
+          <li class="barn">
+            {{ ui.photo(barn.photo, barn.name + "の写真") }}
+            <h3>{{ barn.name }}</h3>
+            <p>{{ barn.text }}</p>
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </section>
+
+    <!-- 牛たちの小学校 -->
+    <section class="section section-alt">
+      <div class="container">
+        <p class="section-label">School</p>
+        <h2 class="section-title">高橋牧場は仔牛たちの小学校！</h2>
+        <div class="two-col">
+          {{ ui.photo("/images/school.jpg", "牛たちの写真") }}
+          <div>
+            <p class="catch">高橋牧場は牛たちの大事な時間を過ごす<br>小学校のような所！</p>
+            <p>牛たちが大人（肥育牛）になる前の期間は本当に大事な時間です。</p>
+            <p>仔牛から大きくなるまでの時間をどう過ごすかで、良い牛にも悪い牛にもなります。</p>
+            <p>その大事な時間（８～９ヵ月間）を過ごす高橋牧場は、『牛たちの小学校』であると我々は考え、日々牛たちの為に様々な業務に取り組んでいます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 各ページへの案内 -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">Contents</p>
+        <h2 class="section-title">牧場をもっと知る</h2>
+        <div class="cards cards-center">
+          {%- for link in links %}
+          <a class="card link-card" href="{{ link.url }}">
+            <h3>{{ link.title }}</h3>
+            <p>{{ link.text }}</p>
+            <span class="more">詳しく見る →</span>
+          </a>
+          {%- endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- 士幌について -->
+    <section class="section section-alt">
+      <div class="container">
+        {% call ui.feature("/images/shihoro.jpg", "士幌の風景写真") %}
+            <p class="section-label">Town</p>
+            <h2 class="section-title">士幌について</h2>
+            <p>高橋牧場のある士幌は北海道十勝のちょうど真ん中にある農業の盛んな街です。</p>
+            <p>北海道の四季折々の景色を楽しむことが出来ます。</p>
+            <p>音更・帯広にも比較的近く、コンビニ、スーパー、病院もあり生活に困ることはありません。</p>
+        {% endcall %}
+      </div>
+    </section>

@@ -1,0 +1,38 @@
+---
+title: 牧場の一日
+description: 高橋牧場株式会社の一日をご紹介します。仔牛の哺乳・餌やりから、牛舎の掃除・去勢・獣医対応まで。
+label: Daily
+heading: ～牧場の一日～
+---
+{% import "components/ui.njk" as ui %}
+    <!-- 導入 -->
+    <section class="section">
+      <div class="container">
+        <p class="lead center">牧場の一日を少しご紹介します</p>
+        {{ ui.photo("/images/daily.jpg", "牧場の写真", "photo-wide") }}
+      </div>
+    </section>
+
+    <!-- 朝 -->
+    <section class="section section-alt">
+      <div class="container">
+        {% call ui.feature("/images/daily-morning.jpg", "哺乳・餌やりの写真") %}
+            <p class="section-label">Morning</p>
+            <h2 class="section-title"><span class="nw">～仔牛の哺乳・</span><span class="nw">餌やりなど～</span></h2>
+            <p>朝は牛たちの朝ごはんから始まります。</p>
+            <p>仔牛にミルクをあげたり、離乳した牛には牧草や配合飼料をあげます。</p>
+            <p>そのとき、風邪をひいたり調子の悪い牛には治療もします。</p>
+        {% endcall %}
+      </div>
+    </section>
+
+    <!-- 昼〜夕方 -->
+    <section class="section">
+      <div class="container">
+        {% call ui.feature("/images/daily-afternoon.jpg", "牛舎掃除などの写真", reverse=true) %}
+            <p class="section-label">Afternoon</p>
+            <h2 class="section-title"><span class="nw">～牛舎掃除・</span><span class="nw">去勢・</span><span class="nw">獣医対応など～</span></h2>
+            <p>朝の作業が終わったら、昼から夕方までは牛舎の掃除をしたり、違う牛舎に牛たちを引っ越したり、去勢や獣医の対応をして、牛たちの環境や健康に関わる作業全般を行います。</p>
+        {% endcall %}
+      </div>
+    </section>
