@@ -130,3 +130,11 @@ Googleマップの「共有 → 地図を埋め込む」の iframe を `src/page
 
 - リンクや画像のパスは `/css/style.css` `/images/x.jpg` のようにサイトのルートから書く。出力時に各ページからの相対パスへ自動で変換される。
 - CSS は `src/css/style.css` の読み込み順に意味がある（後のものが優先）。
+
+## 公開（GitHub Pages）
+
+`main` ブランチに push すると、GitHub Actions（`.github/workflows/deploy.yml`）が自動でサイトを生成して公開する。
+進み具合はリポジトリの「Actions」タブで確認できる。
+
+- 公開URL：https://tkdk-hokkaido.github.io/farm-site/
+- 仮公開中は `src/_data/site.json` の `noindex` を `true` にしておく（本番公開時に `false` へ）

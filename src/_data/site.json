@@ -9,5 +9,5 @@
   "email": "【メールアドレス】",
   "youtube": "【YouTubeチャンネルURL】",
   "web3formsKey": "【Web3FormsのAccessKey】",
-  "noindex": false
+  "noindex": true
 }
