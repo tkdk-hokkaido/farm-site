@@ -1,13 +1,14 @@
 {
   "name": "高橋牧場株式会社",
   "description": "高橋牧場株式会社は仔牛を育てる牧場です。生まれて間もない仔牛から育てて、約9ヵ月間を高橋牧場で過ごします。",
-  "representative": "【代表者名】",
-  "postalCode": "【郵便番号】",
-  "address": "北海道河東郡士幌町【以降の住所】",
-  "tel": "【電話番号】",
+  "representative": "高橋 竜",
+  "postalCode": "080-1249",
+  "address": "北海道河東郡士幌町上音更２０２−６",
+  "tel": "01564-5-3841",
   "telHours": "【例：9:00〜17:00】",
-  "email": "【メールアドレス】",
-  "youtube": "【YouTubeチャンネルURL】",
+  "email": "contact@takahashi-farm.biz",
+  "youtube": "",
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908.539890061864!2d143.166195876674!3d43.19816427112745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f731068953190db%3A0xa80f308ffa426cc!2z6auY5qmL54mn5aC044ix!5e0!3m2!1sja!2sjp!4v1791768673936!5m2!1sja!2sjp",
   "web3formsKey": "【Web3FormsのAccessKey】",
   "noindex": true
 }

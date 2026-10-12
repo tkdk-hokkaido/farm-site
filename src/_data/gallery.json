@@ -4,19 +4,69 @@
       "id": "camera",
       "label": "カメラ目線",
       "cover": "/images/gallery/camera.jpg",
-      "photos": []
+      "photos": [
+        { "src": "/images/gallery/camera/0745.jpg", "alt": "こちらを見つめる仔牛" },
+        { "src": "/images/gallery/camera/0774.jpg", "alt": "3頭そろってカメラ目線" },
+        { "src": "/images/gallery/camera/0783.jpg", "alt": "餌場から顔をのぞかせる牛" },
+        { "src": "/images/gallery/camera/0876.jpg", "alt": "牧草の上でくつろぐ仔牛たち" },
+        { "src": "/images/gallery/camera/0930.jpg", "alt": "柵の間からこんにちは" },
+        { "src": "/images/gallery/camera/0944.jpg", "alt": "じっと見つめる牛" },
+        { "src": "/images/gallery/camera/0957.jpg", "alt": "まっすぐな瞳の仔牛" },
+        { "src": "/images/gallery/camera/0969.jpg", "alt": "興味津々の牛たち" },
+        { "src": "/images/gallery/camera/1068.jpg", "alt": "餌場に並ぶ牛たち" },
+        { "src": "/images/gallery/camera/1355.jpg", "alt": "柵越しの仔牛" },
+        { "src": "/images/gallery/camera/1371.jpg", "alt": "ベロを出した仔牛" },
+        { "src": "/images/gallery/camera/1662.jpg", "alt": "仲良く並ぶ仔牛" },
+        { "src": "/images/gallery/camera/1692.jpg", "alt": "カメラに近づく仔牛" },
+        { "src": "/images/gallery/camera/1699.jpg", "alt": "柵から顔を出す仔牛" },
+        { "src": "/images/gallery/camera/1780.jpg", "alt": "指をなめる仔牛" },
+        { "src": "/images/gallery/camera/1803.jpg", "alt": "人なつっこい仔牛" }
+      ]
     },
     {
       "id": "scenery",
       "label": "牧場内の風景",
       "cover": "/images/gallery/scenery.jpg",
-      "photos": []
+      "photos": [
+        { "src": "/images/gallery/scenery/1494.jpg", "alt": "朝日に照らされる牛舎と牧草" },
+        { "src": "/images/gallery/scenery/0690.jpg", "alt": "牧場へ続く道" },
+        { "src": "/images/gallery/scenery/1078.jpg", "alt": "高橋牧場の看板" },
+        { "src": "/images/gallery/scenery/0962.jpg", "alt": "サイロと山並み" },
+        { "src": "/images/gallery/scenery/1084.jpg", "alt": "並ぶ牛舎" },
+        { "src": "/images/gallery/scenery/1087.jpg", "alt": "牛舎の並ぶ敷地" },
+        { "src": "/images/gallery/scenery/1112.jpg", "alt": "牛舎沿いの道" },
+        { "src": "/images/gallery/scenery/1114.jpg", "alt": "新しい牛舎" },
+        { "src": "/images/gallery/scenery/1558.jpg", "alt": "牛舎の通路" },
+        { "src": "/images/gallery/scenery/1099.jpg", "alt": "飼料タンクと飼料運搬車" },
+        { "src": "/images/gallery/scenery/0794.jpg", "alt": "トラクターと作業小屋" },
+        { "src": "/images/gallery/scenery/1017.jpg", "alt": "「高橋牧場」のホイールローダー" },
+        { "src": "/images/gallery/scenery/1468.jpg", "alt": "デントコーン畑の道" },
+        { "src": "/images/gallery/scenery/1408.jpg", "alt": "十勝の空" }
+      ]
     },
     {
       "id": "work",
       "label": "作業の一コマ",
       "cover": "/images/gallery/work.jpg",
-      "photos": []
+      "photos": [
+        { "src": "/images/gallery/work/1578.jpg", "alt": "ロール乾草の給餌" },
+        { "src": "/images/gallery/work/1563.jpg", "alt": "ロール乾草の準備" },
+        { "src": "/images/gallery/work/1603.jpg", "alt": "乾草を牛舎へ" },
+        { "src": "/images/gallery/work/1673.jpg", "alt": "乾草を広げる作業" },
+        { "src": "/images/gallery/work/0701.jpg", "alt": "餌を食べる仔牛たち" },
+        { "src": "/images/gallery/work/1308.jpg", "alt": "哺育舎の見回り" },
+        { "src": "/images/gallery/work/1194.jpg", "alt": "仔牛のお世話" },
+        { "src": "/images/gallery/work/1197.jpg", "alt": "処置の様子" },
+        { "src": "/images/gallery/work/1556.jpg", "alt": "仔牛への処置" },
+        { "src": "/images/gallery/work/1505.jpg", "alt": "獣医さんの診察" },
+        { "src": "/images/gallery/work/1392.jpg", "alt": "耳標の準備" },
+        { "src": "/images/gallery/work/1409.jpg", "alt": "牛の引っ越し" },
+        { "src": "/images/gallery/work/1419.jpg", "alt": "牛の引っ越し" },
+        { "src": "/images/gallery/work/0866.jpg", "alt": "牛舎の洗浄" },
+        { "src": "/images/gallery/work/1336.jpg", "alt": "石灰塗布" },
+        { "src": "/images/gallery/work/dji-0051.jpg", "alt": "牧草の収穫" },
+        { "src": "/images/gallery/work/1456.jpg", "alt": "デントコーン畑のトラクター" }
+      ]
     }
   ]
 }

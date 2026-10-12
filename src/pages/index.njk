@@ -17,7 +17,7 @@ barns:
 links:
   - title: 高橋牧場について
     url: /about.html
-    text: 牧場の成り立ちや想い、牧場概要をご紹介します。
+    text: 牧場の成り立ちや想いをご紹介します。
   - title: 当牧場のこだわり
     url: /commitment.html
     text: 牛舎の消毒や水槽掃除など、すべては牛たちのための取り組みをご紹介します。
@@ -76,8 +76,21 @@ links:
       </div>
     </section>
 
-    <!-- 各ページへの案内 -->
+    <!-- 士幌について -->
     <section class="section">
+      <div class="container">
+        {% call ui.feature("/images/shihoro.jpg", "士幌の風景写真") %}
+            <p class="section-label">Town</p>
+            <h2 class="section-title">士幌について</h2>
+            <p>高橋牧場のある士幌は北海道十勝のちょうど真ん中にある農業の盛んな街です。</p>
+            <p>北海道の四季折々の景色を楽しむことが出来ます。</p>
+            <p>音更・帯広にも比較的近く、コンビニ、スーパー、病院もあり生活に困ることはありません。</p>
+        {% endcall %}
+      </div>
+    </section>
+
+    <!-- 各ページへの案内 -->
+    <section class="section section-alt">
       <div class="container">
         <p class="section-label">Contents</p>
         <h2 class="section-title">牧場をもっと知る</h2>
@@ -90,18 +103,5 @@ links:
           </a>
           {%- endfor %}
         </div>
-      </div>
-    </section>
-
-    <!-- 士幌について -->
-    <section class="section section-alt">
-      <div class="container">
-        {% call ui.feature("/images/shihoro.jpg", "士幌の風景写真") %}
-            <p class="section-label">Town</p>
-            <h2 class="section-title">士幌について</h2>
-            <p>高橋牧場のある士幌は北海道十勝のちょうど真ん中にある農業の盛んな街です。</p>
-            <p>北海道の四季折々の景色を楽しむことが出来ます。</p>
-            <p>音更・帯広にも比較的近く、コンビニ、スーパー、病院もあり生活に困ることはありません。</p>
-        {% endcall %}
       </div>
     </section>

@@ -31,7 +31,7 @@ src/
 │       └── ui.njk          … 写真枠・写真と文章の2列・準備中表示
 ├── pages/                  … 各ページの中身（ファイル名.html として出力）
 │   ├── index.njk           … ホーム
-│   ├── about.njk           … 高橋牧場について
+│   ├── about.njk           … 高橋牧場について（ごあいさつ）
 │   ├── commitment.njk      … 当牧場のこだわり
 │   ├── daily.njk           … 牧場の一日
 │   ├── gallery.njk         … 牧場風景写真館
@@ -83,6 +83,8 @@ excerpt: 一覧ページに表示する短い紹介文
 
 | ファイル名 | 場所 |
 |---|---|
+| `logo.png` | 全ページ：ヘッダーのロゴ（背景は透明） |
+| `header.jpg` | 全ページ：ヘッダーの帯の背景 |
 | `hero.jpg` | ホーム：トップの大きな写真（横長がおすすめ） |
 | `hoikusha.jpg` / `rinyusha.jpg` / `ikuseisha.jpg` | ホーム：哺育舎・離乳舎・育成舎 |
 | `school.jpg` | ホーム：「仔牛たちの小学校」 |
@@ -95,12 +97,14 @@ excerpt: 一覧ページに表示する短い紹介文
 
 テーマは「カメラ目線（camera）」「牧場内の風景（scenery）」「作業の一コマ（work）」の3つ。
 
+- 写真は横幅1000〜2400px程度に縮小し、位置情報などを消してから入れる（元の写真は `_photos/` に置き、git には含めない）。
 - **表紙写真**：`src/images/gallery/camera.jpg`・`scenery.jpg`・`work.jpg`
 - **各テーマの写真**：`src/images/gallery/camera/` などに入れ、`src/_data/gallery.json` の該当テーマの `photos` に追加する。1枚でも追加すると「準備中」の表示は消える。
 
 ```json
 "photos": [
-  { "src": "/images/gallery/camera/ファイル名.jpg", "caption": "写真の説明" }
+  { "src": "/images/gallery/camera/ファイル名.jpg", "alt": "写真の説明（画面には出ない）" },
+  { "src": "/images/gallery/camera/ファイル名.jpg", "alt": "写真の説明", "caption": "写真の下に表示する一言" }
 ]
 ```
 

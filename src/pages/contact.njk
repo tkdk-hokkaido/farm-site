@@ -26,7 +26,6 @@ recruiting: false
             <p class="note">数日以内にご返信いたします</p>
           </div>
         </div>
-        <p class="note">※ 防疫のため、牛舎への立ち入り・見学はご遠慮いただいております。</p>
 
         <!-- お問い合わせフォーム（送信は Web3Forms を利用。手順は README.md） -->
         <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -101,9 +100,13 @@ recruiting: false
         <p class="section-label">Access</p>
         <h2 class="section-title">アクセス</h2>
         <p>〒{{ site.postalCode }} {{ site.address }}</p>
+        <!-- 地図の URL は _data/site.json の mapEmbedUrl（Googleマップの「共有 → 地図を埋め込む」の src 部分） -->
         <div class="map-placeholder">
-          <!-- Googleマップの「共有 → 地図を埋め込む」で取得した iframe をここに貼り付け -->
+          {%- if site.mapEmbedUrl %}
+          <iframe src="{{ site.mapEmbedUrl }}" title="高橋牧場の地図" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          {%- else %}
           <p>地図（Googleマップ埋め込み）</p>
+          {%- endif %}
         </div>
       </div>
     </section>

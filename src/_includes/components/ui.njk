@@ -12,17 +12,30 @@
 {%- endmacro %}
 
 {#-
+  写真を2×2のタイル状に並べる
+    {{ ui.photoGrid([{ src: "/images/a.jpg", label: "説明" }, …]) }}
+-#}
+{% macro photoGrid(photos) -%}
+<div class="photo-grid">
+            {%- for p in photos %}
+            {{ photo(p.src, p.label) }}
+            {%- endfor %}
+          </div>
+{%- endmacro %}
+
+{#-
   写真と文章の2列：文章は call ～ endcall の中に書く。reverse=true で PC 表示の左右が入れ替わる
     {% call ui.feature("/images/x.jpg", "写真の説明") %}
       <h2>見出し</h2><p>本文</p>
     {% endcall %}
+  写真を複数並べたいときは、1つ目に写真のリスト（photoGrid と同じ形）を渡す。このとき label は使わない
 -#}
-{% macro feature(src, label, reverse=false) -%}
+{% macro feature(src, label="", reverse=false) -%}
 <div class="two-col{% if reverse %} reverse{% endif %}">
           <div>
 {{ caller() }}
           </div>
-          {{ photo(src, label) }}
+          {% if src is string %}{{ photo(src, label) }}{% else %}{{ photoGrid(src) }}{% endif %}
         </div>
 {%- endmacro %}
 

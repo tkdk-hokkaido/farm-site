@@ -1,2 +1,5 @@
 node_modules/
 _site/
+
+# ダウンロードした元の写真（公開しない）
+_photos/

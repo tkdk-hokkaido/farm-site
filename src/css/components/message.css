@@ -1,5 +1,31 @@
 /* ===== ごあいさつ ===== */
+/*
+  背景に朝日の写真（横4:3）を画面幅いっぱいに敷く。
+  写真の高さ＝画面幅×0.75、太陽は写真の上から約52%の位置にあるので、
+  パネルはそれより下（画面幅×0.42）から始めて、太陽と空が隠れないようにする。
+  写真の下の方はクリーム色に溶け込ませる。
+*/
+.message-section {
+  padding: 42vw 0 120px;
+  background:
+    linear-gradient(180deg, rgba(247, 242, 232, 0) 0, rgba(247, 242, 232, 0) 55vw, var(--cream) 75vw),
+    url("../../images/about-bg.jpg") center top / 100% auto no-repeat,
+    var(--cream);
+}
+.message {
+  padding: 3.5rem 4rem; border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
 .message p { font-size: 1.02rem; line-height: 2.1; }
 .message .catch { margin: 2.5rem 0; text-align: center; }
+.message .signature { margin-bottom: 0; }
 .divider { border: 0; width: 3rem; height: 2px; background: var(--cream-dark); margin: 2.5rem auto; }
 .signature { text-align: right; font-family: var(--serif); margin-top: 3rem; }
+
+@media (max-width: 960px) {
+  .message-section { padding-bottom: 72px; }
+  .message { padding: 2rem 1.4rem; }
+}

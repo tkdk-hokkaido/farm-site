@@ -1,10 +1,15 @@
-{#- ヘッダー：メニュー項目は _data/nav.json で管理 -#}
+{#- ヘッダー：上はロゴと牛の写真の帯（スクロールで流れる）、下はメニュー（常に上部に表示）。メニュー項目は _data/nav.json で管理 -#}
 {#- ホームの URL は "/" になるので、メニューの "/index.html" と比べられるようにそろえる -#}
 {%- set here = "/index.html" if page.url == "/" else page.url -%}
+  <div class="site-banner">
+    <div class="container banner-inner">
+      <a href="/index.html" class="banner-logo"><img src="/images/logo.png" alt="{{ site.name }}" width="260" height="226"></a>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/index.html" class="logo">{{ site.name }}</a>
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="メインメニュー">
         <ul>
           {%- for item in nav %}
           <li><a href="{{ item.url }}"{% if here == item.url or (item.section and here.startsWith(item.section)) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>

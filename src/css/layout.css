@@ -1,7 +1,25 @@
 /* ===== ヘッダー・ヒーロー・セクション・フッターなど、ページの骨組み ===== */
 
-/* ===== ヘッダー ===== */
-/* sticky なので、ヘッダーの高さが変わっても下の内容が自動でずれる */
+/* ===== ヘッダー上部の帯（ロゴ＋牛の写真） ===== */
+.site-banner {
+  position: relative; height: var(--banner-h); overflow: hidden;
+  background: var(--cream);
+}
+.banner-inner { position: relative; height: 100%; display: flex; align-items: center; }
+/* 牛の写真は本文の幅（.container）の右側に置き、顔全体（耳〜鼻）が入る大きさにする。
+   左右の端はクリーム色に溶け込ませる */
+.banner-inner::after {
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0;
+  width: min(72%, calc(var(--banner-h) * 2.6));
+  background: url("../images/header.jpg") center 55% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 30%, #000 88%, transparent 100%);
+}
+.banner-logo { position: relative; z-index: 1; }
+.banner-logo img { height: calc(var(--banner-h) - 56px); width: auto; display: block; }
+
+/* ===== メニュー ===== */
+/* sticky なので、スクロールしても画面上部に残る */
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(247, 242, 232, 0.95);
@@ -9,25 +27,25 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 .header-inner {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center;
   min-height: var(--header-h);
 }
-.logo { font-family: var(--serif); font-weight: 700; font-size: 1.3rem; color: var(--green); white-space: nowrap; }
-.site-nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.site-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2rem 1.8rem; list-style: none; margin: 0; padding: 0; }
 .site-nav a { font-size: 0.92rem; white-space: nowrap; transition: color 0.2s; }
 .site-nav a:hover { color: var(--brown); }
 .site-nav a[aria-current="page"] { color: var(--brown); font-weight: 700; }
 
 /* ===== ヒーロー（ホーム） ===== */
 .hero {
-  position: relative; height: calc(100vh - var(--header-h)); min-height: 480px;
+  position: relative; height: calc(100vh - var(--header-h)); min-height: 440px;
   display: flex; align-items: center; justify-content: center;
   text-align: center; color: var(--white); overflow: hidden;
 }
 .hero-bg {
   position: absolute; inset: 0;
   /* images/hero.jpg を置くと写真が表示され、無ければ緑のグラデーションになる */
-  background: url("../images/hero.jpg") center / cover no-repeat, var(--forest);
+  /* 写真の右寄りに仔牛がいるので、画面が狭いときも仔牛が残るよう右寄せで切り取る */
+  background: url("../images/hero.jpg") 70% center / cover no-repeat, var(--forest);
 }
 .hero-bg::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3); }
 .hero-content { position: relative; padding: 0 1rem; }
@@ -81,12 +99,17 @@
 /* ===== スマホ・タブレット ===== */
 /* ヘッダー：メニューが横に入りきらない幅では、ロゴの下にメニューを並べて折り返す */
 @media (max-width: 1180px) {
-  :root { --header-h: 96px; }
-  .header-inner { flex-direction: column; justify-content: center; padding: 0.6rem 0; gap: 0.3rem; }
-  .logo { font-size: 1.15rem; }
-  .site-nav ul { flex-wrap: wrap; justify-content: center; gap: 0.2rem 1.2rem; }
-  .site-nav a { font-size: 0.82rem; display: block; padding: 0.15rem 0; }
+  .site-nav ul { gap: 0.2rem 1.2rem; }
+  .site-nav a { font-size: 0.85rem; display: block; padding: 0.15rem 0; }
   .site-nav a[aria-current="page"] { border-bottom: 2px solid var(--brown); }
+}
+
+/* 狭い画面ではロゴの帯を低くし、メニューは折り返して2〜3行になる */
+@media (max-width: 760px) {
+  :root { --header-h: 84px; --banner-h: 160px; }
+  .banner-logo img { height: calc(var(--banner-h) - 32px); }
+  .header-inner { padding: 0.5rem 0; }
+  .site-nav a { font-size: 0.82rem; }
 }
 
 @media (max-width: 960px) {

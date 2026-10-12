@@ -10,7 +10,8 @@
   --white: #fff;
   --serif: "Noto Serif JP", serif;
   --sans: "Noto Sans JP", sans-serif;
-  --header-h: 64px;
+  --header-h: 56px;
+  --banner-h: 300px;
   --forest: linear-gradient(160deg, #6f8f5a 0%, #3f5d3a 55%, #2a3d28 100%);
 }
 

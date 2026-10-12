@@ -4,7 +4,7 @@ description: 高橋牧場株式会社の牛たちや、四季折々の牧場の�
 label: Gallery
 heading: 牧場風景写真館
 ---
-{#- テーマと写真は _data/gallery.json で管理 -#}
+{#- テーマと写真は _data/gallery.json で管理（alt は画面に出ない説明、caption を書くと写真の下に表示） -#}
 {% import "components/ui.njk" as ui %}
     <section class="section">
       <div class="container">
@@ -28,8 +28,10 @@ heading: 牧場風景写真館
           <div class="gallery">
             {%- for p in theme.photos %}
             <figure>
-              <img src="{{ p.src }}" alt="{{ p.caption }}" loading="lazy">
+              <img src="{{ p.src }}" alt="{{ p.alt or p.caption }}" loading="lazy">
+              {%- if p.caption %}
               <figcaption>{{ p.caption }}</figcaption>
+              {%- endif %}
             </figure>
             {%- endfor %}
           </div>

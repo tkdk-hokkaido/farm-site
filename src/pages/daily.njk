@@ -3,6 +3,18 @@ title: 牧場の一日
 description: 高橋牧場株式会社の一日をご紹介します。仔牛の哺乳・餌やりから、牛舎の掃除・去勢・獣医対応まで。
 label: Daily
 heading: ～牧場の一日～
+
+# 各時間帯の写真（2×2で並ぶ）
+morningPhotos:
+  - { src: /images/daily-morning-1.jpg, label: 餌を食べる牛 }
+  - { src: /images/daily-morning-2.jpg, label: 哺育舎の見回り }
+  - { src: /images/daily-morning-3.jpg, label: 餌を食べる仔牛たち }
+  - { src: /images/daily-morning-4.jpg, label: 牧草の上でくつろぐ仔牛たち }
+afternoonPhotos:
+  - { src: /images/daily-afternoon-1.jpg, label: 処置の様子 }
+  - { src: /images/daily-afternoon-2.jpg, label: 牛の引っ越し }
+  - { src: /images/daily-afternoon-3.jpg, label: 乾草を広げる作業 }
+  - { src: /images/daily-afternoon-4.jpg, label: 獣医さんの診察 }
 ---
 {% import "components/ui.njk" as ui %}
     <!-- 導入 -->
@@ -16,7 +28,7 @@ heading: ～牧場の一日～
     <!-- 朝 -->
     <section class="section section-alt">
       <div class="container">
-        {% call ui.feature("/images/daily-morning.jpg", "哺乳・餌やりの写真") %}
+        {% call ui.feature(morningPhotos) %}
             <p class="section-label">Morning</p>
             <h2 class="section-title"><span class="nw">～仔牛の哺乳・</span><span class="nw">餌やりなど～</span></h2>
             <p>朝は牛たちの朝ごはんから始まります。</p>
@@ -29,7 +41,7 @@ heading: ～牧場の一日～
     <!-- 昼〜夕方 -->
     <section class="section">
       <div class="container">
-        {% call ui.feature("/images/daily-afternoon.jpg", "牛舎掃除などの写真", reverse=true) %}
+        {% call ui.feature(afternoonPhotos, reverse=true) %}
             <p class="section-label">Afternoon</p>
             <h2 class="section-title"><span class="nw">～牛舎掃除・</span><span class="nw">去勢・</span><span class="nw">獣医対応など～</span></h2>
             <p>朝の作業が終わったら、昼から夕方までは牛舎の掃除をしたり、違う牛舎に牛たちを引っ越したり、去勢や獣医の対応をして、牛たちの環境や健康に関わる作業全般を行います。</p>
